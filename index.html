@@ -42,22 +42,16 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 0.8rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .brand-logo-text {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--kp-navy);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        .brand-logo-text span {
-            color: var(--kp-coral);
+        .brand-logo-img {
+            height: 48px;
+            width: auto;
+            display: block;
         }
 
         .nav-menu {
@@ -146,6 +140,10 @@
             line-height: 1.1;
             letter-spacing: -1px;
             margin-bottom: 1.2rem;
+        }
+
+        .hero-title span {
+            color: var(--kp-coral);
         }
 
         .hero-subtitle {
@@ -441,6 +439,13 @@
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
         footer p {
             font-size: 0.9rem;
             color: #94A3B8;
@@ -472,8 +477,8 @@
     <!-- NAVEGACIÓN -->
     <header>
         <div class="nav-container">
-            <a href="#" class="brand-logo-text">
-                KITCHEN <span>PARTNER</span>
+            <a href="#">
+                <img src="logo-color.png" alt="Kitchen Partner Logo" class="brand-logo-img">
             </a>
             <ul class="nav-menu">
                 <li><a href="#filosofia" class="nav-link">Filosofía</a></li>
@@ -672,6 +677,9 @@
 
     <!-- FOOTER -->
     <footer>
+        <div>
+            <img src="logo-blanco.png" alt="Kitchen Partner Logo Blanco" class="footer-logo-img">
+        </div>
         <p><strong>Kitchen Partner™</strong> — Consultoría Estratégica en Delivery</p>
         <p style="margin-top: 0.4rem;">Mexicali, Baja California, México | contacto@kitchenpartner.com.mx</p>
         <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;">&copy; 2026 Kitchen Partner. Todos los derechos reservados.</p>
