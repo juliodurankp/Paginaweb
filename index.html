@@ -9,24 +9,20 @@
     <link rel="icon" type="image/png" href="k-color.png">
     <link rel="apple-touch-icon" href="k-color.png">
 
-    <!-- Fuentes Premium Google Fonts -->
+    <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-dark: #0A1118;
-            --bg-card: #132238;
-            --bg-card-hover: #1A2E4A;
-            --kp-blue-electric: #0072CE;
-            --kp-blue-glow: #00A3FF;
-            --kp-orange: #FF6600;
-            --kp-orange-glow: #FF8533;
-            --text-white: #FFFFFF;
-            --text-muted: #A0B2C6;
-            --border-glow: rgba(0, 163, 255, 0.25);
-            --border-orange: rgba(255, 102, 0, 0.4);
+            --kp-navy: #0D2B45;
+            --kp-orange: #FF6B4A;
+            --kp-bg-light: #F2F4F7;
+            --kp-white: #FFFFFF;
+            --kp-text-dark: #1E293B;
+            --kp-text-muted: #64748B;
+            --kp-border: #E2E8F0;
         }
 
         * {
@@ -38,10 +34,9 @@
         }
 
         body {
-            color: var(--text-white);
+            color: var(--kp-text-dark);
             line-height: 1.6;
-            background-color: var(--bg-dark);
-            overflow-x: hidden;
+            background-color: var(--kp-bg-light);
         }
 
         h1, h2, h3, h4, .logo span {
@@ -54,125 +49,109 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.2rem 6%;
-            background-color: rgba(10, 17, 24, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: var(--kp-white);
+            box-shadow: 0 2px 10px rgba(13, 43, 69, 0.05);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 2px solid var(--kp-orange);
+            border-bottom: 3px solid var(--kp-orange);
         }
 
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-weight: 900;
-            font-size: 1.35rem;
-            color: var(--text-white);
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--kp-navy);
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .logo img {
-            height: 40px;
-            filter: drop-shadow(0 0 8px rgba(0, 163, 255, 0.4));
+            height: 38px;
         }
 
         nav a {
             margin-left: 24px;
             text-decoration: none;
-            color: var(--text-muted);
+            color: var(--kp-navy);
             font-weight: 600;
             font-size: 0.95rem;
-            transition: all 0.2s ease;
+            transition: color 0.2s;
         }
 
         nav a:hover {
             color: var(--kp-orange);
-            text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
         }
 
-        /* HERO */
+        /* HERO SECTION */
         .hero {
-            padding: 110px 6% 90px;
-            background: radial-gradient(circle at top center, #1B3252 0%, var(--bg-dark) 70%);
+            padding: 100px 6% 90px;
+            background-color: var(--kp-white);
             text-align: center;
-            position: relative;
-            border-bottom: 1px solid var(--border-glow);
+            border-bottom: 1px solid var(--kp-border);
         }
 
         .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 22px;
+            font-size: 3rem;
+            margin-bottom: 20px;
             font-weight: 900;
-            max-width: 1000px;
+            color: var(--kp-navy);
+            max-width: 950px;
             margin-left: auto;
             margin-right: auto;
             line-height: 1.2;
-            letter-spacing: -0.5px;
         }
 
-        .hero h1 .highlight-orange {
+        .hero h1 span {
             color: var(--kp-orange);
-            text-shadow: 0 0 20px rgba(255, 102, 0, 0.4);
-        }
-
-        .hero h1 .highlight-blue {
-            color: var(--kp-blue-glow);
-            text-shadow: 0 0 20px rgba(0, 163, 255, 0.4);
         }
 
         .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            color: var(--text-muted);
-            font-weight: 400;
+            font-size: 1.25rem;
+            max-width: 780px;
+            margin: 0 auto 35px;
+            color: var(--kp-text-muted);
         }
 
-        .btn-hero {
+        .btn-navy {
             display: inline-block;
-            padding: 18px 42px;
-            background: linear-gradient(135deg, var(--kp-orange) 0%, #E05500 100%);
-            color: #ffffff;
+            padding: 16px 38px;
+            background-color: var(--kp-navy);
+            color: var(--kp-white);
             text-decoration: none;
             border-radius: 8px;
-            font-weight: 800;
-            font-size: 1.15rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 25px rgba(255, 102, 0, 0.5);
-            transition: all 0.3s ease;
-            border: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 15px rgba(13, 43, 69, 0.15);
+            transition: all 0.2s ease;
         }
 
-        .btn-hero:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 0 35px rgba(255, 102, 0, 0.8);
+        .btn-navy:hover {
+            background-color: #081B2C;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13, 43, 69, 0.25);
         }
 
         /* SECCIONES GENERALES */
         section {
-            padding: 90px 6%;
-            position: relative;
+            padding: 85px 6%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 14px;
-            color: var(--text-white);
+            font-size: 2.3rem;
+            margin-bottom: 12px;
+            color: var(--kp-navy);
             font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .section-subtitle {
             text-align: center;
-            color: var(--text-muted);
-            max-width: 750px;
-            margin: 0 auto 60px;
-            font-size: 1.1rem;
+            color: var(--kp-text-muted);
+            max-width: 720px;
+            margin: 0 auto 55px;
+            font-size: 1.05rem;
         }
 
         /* QUIÉNES SOMOS */
@@ -186,35 +165,21 @@
         }
 
         .about-box {
-            background: var(--bg-card);
-            padding: 45px 35px;
-            border-radius: 14px;
-            border: 1px solid var(--border-glow);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            position: relative;
-        }
-
-        .about-box::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--kp-orange);
-            border-radius: 14px 0 0 14px;
+            background-color: var(--kp-white);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 6px solid var(--kp-orange);
+            box-shadow: 0 4px 20px rgba(13, 43, 69, 0.05);
+            border-top: 1px solid var(--kp-border);
+            border-right: 1px solid var(--kp-border);
+            border-bottom: 1px solid var(--kp-border);
         }
 
         .about-box h3 {
-            font-size: 1.7rem;
-            margin-bottom: 18px;
-            color: var(--kp-blue-glow);
-            font-weight: 800;
-        }
-
-        .about-box p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--kp-navy);
+            font-weight: 700;
         }
 
         .about-list {
@@ -222,32 +187,25 @@
         }
 
         .about-list li {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
             display: flex;
             align-items: flex-start;
-            gap: 14px;
-            color: var(--text-muted);
+            gap: 12px;
+            color: var(--kp-text-dark);
         }
 
         .about-list li strong {
-            color: var(--text-white);
+            color: var(--kp-navy);
         }
 
         .check-icon {
             color: var(--kp-orange);
-            font-weight: 900;
-            font-size: 1.3rem;
-            text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
         /* LOS 3 EJES */
-        .ejes-section {
-            background-color: #080E14;
-            border-top: 1px solid var(--border-glow);
-            border-bottom: 1px solid var(--border-glow);
-        }
-
         .ejes-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -257,46 +215,39 @@
         }
 
         .eje-card {
-            border: 1px solid var(--border-glow);
-            border-radius: 14px;
-            padding: 45px 30px;
-            background: var(--bg-card);
+            border: 1px solid var(--kp-border);
+            border-radius: 12px;
+            padding: 40px 30px;
+            background: var(--kp-white);
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-            transition: all 0.3s ease;
-        }
-
-        .eje-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--kp-orange);
-            box-shadow: 0 0 30px rgba(255, 102, 0, 0.25);
+            box-shadow: 0 4px 15px rgba(13, 43, 69, 0.04);
+            border-top: 5px solid var(--kp-navy);
         }
 
         .eje-card .icon-box {
-            width: 70px;
-            height: 70px;
-            background: radial-gradient(circle, var(--kp-blue-electric) 0%, var(--bg-dark) 100%);
+            width: 65px;
+            height: 65px;
+            background-color: var(--kp-bg-light);
             color: var(--kp-orange);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 22px;
-            border: 2px solid var(--kp-orange);
-            box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+            font-weight: bold;
         }
 
         .eje-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 14px;
-            color: var(--text-white);
-            font-weight: 800;
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--kp-navy);
+            font-weight: 700;
         }
 
         .eje-card p {
-            color: var(--text-muted);
-            font-size: 1rem;
+            color: var(--kp-text-muted);
+            font-size: 0.98rem;
         }
 
         /* METODOLOGÍA */
@@ -309,44 +260,37 @@
         }
 
         .phase-card {
-            background: var(--bg-card);
-            padding: 40px 30px;
-            border-radius: 14px;
-            border: 1px solid var(--border-glow);
-            position: relative;
+            background: var(--kp-white);
+            padding: 35px 30px;
+            border-radius: 12px;
+            border: 1px solid var(--kp-border);
+            box-shadow: 0 4px 15px rgba(13, 43, 69, 0.04);
         }
 
         .phase-tag {
             display: inline-block;
             background: var(--kp-orange);
-            color: #ffffff;
-            font-weight: 800;
+            color: var(--kp-white);
+            font-weight: 700;
             font-size: 0.85rem;
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 0 10px rgba(255, 102, 0, 0.4);
         }
 
         .phase-card h3 {
-            color: var(--kp-blue-glow);
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            font-weight: 800;
+            color: var(--kp-navy);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
         .phase-card p {
-            color: var(--text-muted);
+            color: var(--kp-text-muted);
         }
 
         /* PLANES Y PRECIOS */
-        .pricing-section {
-            background-color: #080E14;
-            border-top: 1px solid var(--border-glow);
-        }
-
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -356,11 +300,11 @@
         }
 
         .pricing-card {
-            border: 1px solid var(--border-glow);
-            border-radius: 14px;
-            padding: 40px 28px;
-            background-color: var(--bg-card);
-            transition: all 0.3s ease;
+            border: 1px solid var(--kp-border);
+            border-radius: 12px;
+            padding: 35px 25px;
+            background-color: var(--kp-white);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -368,15 +312,13 @@
         }
 
         .pricing-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--kp-blue-glow);
-            box-shadow: 0 0 25px rgba(0, 163, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(13, 43, 69, 0.08);
         }
 
         .pricing-card.featured {
             border: 2px solid var(--kp-orange);
-            background: linear-gradient(180deg, #182B45 0%, var(--bg-card) 100%);
-            box-shadow: 0 0 30px rgba(255, 102, 0, 0.25);
+            box-shadow: 0 8px 25px rgba(255, 107, 74, 0.15);
         }
 
         .badge {
@@ -384,54 +326,53 @@
             top: -14px;
             right: 15px;
             background-color: var(--kp-orange);
-            color: #ffffff;
-            padding: 6px 14px;
+            color: var(--kp-white);
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 900;
+            font-weight: 800;
             letter-spacing: 0.5px;
-            box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
         }
 
         .plan-title {
-            font-size: 1.55rem;
-            font-weight: 900;
+            font-size: 1.45rem;
+            font-weight: 800;
             margin-bottom: 5px;
-            color: var(--text-white);
+            color: var(--kp-navy);
         }
 
         .price-prefix {
             font-size: 0.8rem;
-            color: var(--kp-blue-glow);
+            color: var(--kp-text-muted);
             text-transform: uppercase;
             font-weight: 700;
         }
 
         .price {
-            font-size: 2.3rem;
-            font-weight: 900;
-            color: var(--text-white);
-            margin-bottom: 20px;
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--kp-navy);
+            margin-bottom: 18px;
         }
 
         .price span {
             font-size: 0.85rem;
             font-weight: 500;
-            color: var(--text-muted);
+            color: var(--kp-text-muted);
         }
 
         .features-list {
             list-style: none;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .features-list li {
-            margin-bottom: 12px;
-            font-size: 0.95rem;
+            margin-bottom: 11px;
+            font-size: 0.92rem;
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            color: var(--text-muted);
+            gap: 8px;
+            color: var(--kp-text-dark);
         }
 
         .features-list li::before {
@@ -443,94 +384,89 @@
         .btn {
             display: block;
             width: 100%;
-            padding: 14px;
+            padding: 13px;
             text-align: center;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: 800;
+            border-radius: 6px;
+            font-weight: 700;
             transition: all 0.2s ease;
             border: none;
             cursor: pointer;
             font-size: 0.95rem;
-            text-transform: uppercase;
         }
 
         .btn-orange {
             background-color: var(--kp-orange);
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+            color: var(--kp-white);
         }
 
         .btn-orange:hover {
-            background-color: var(--kp-orange-glow);
-            box-shadow: 0 0 25px rgba(255, 102, 0, 0.7);
+            background-color: #E05500;
         }
 
-        .btn-blue-outline {
-            border: 2px solid var(--kp-blue-glow);
-            color: var(--kp-blue-glow);
+        .btn-navy-outline {
+            border: 2px solid var(--kp-navy);
+            color: var(--kp-navy);
             background: transparent;
         }
 
-        .btn-blue-outline:hover {
-            background-color: var(--kp-blue-electric);
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(0, 163, 255, 0.4);
+        .btn-navy-outline:hover {
+            background-color: var(--kp-navy);
+            color: var(--kp-white);
         }
 
         /* FORMULARIO DE CONTACTO */
         .contact-container {
-            max-width: 650px;
+            max-width: 620px;
             margin: 0 auto;
-            background: var(--bg-card);
-            padding: 50px 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-            border: 1px solid var(--border-glow);
+            background: var(--kp-white);
+            padding: 45px 35px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(13, 43, 69, 0.06);
+            border: 1px solid var(--kp-border);
         }
 
         .contact-container h2 {
-            color: var(--text-white);
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 10px;
+            color: var(--kp-navy);
+            font-weight: 800;
         }
 
         .form-group {
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
             font-weight: 700;
             margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: var(--kp-blue-glow);
+            font-size: 0.9rem;
+            color: var(--kp-navy);
         }
 
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 14px;
-            border: 1px solid var(--border-glow);
-            border-radius: 8px;
-            font-size: 1rem;
-            background-color: #0A1118;
-            color: #ffffff;
+            padding: 13px;
+            border: 1px solid var(--kp-border);
+            border-radius: 6px;
+            font-size: 0.98rem;
+            background-color: var(--kp-bg-light);
+            color: var(--kp-text-dark);
         }
 
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--kp-orange);
-            box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+            background-color: var(--kp-white);
+            box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.15);
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            background-color: #05090D;
-            color: var(--text-muted);
+            padding: 35px;
+            background-color: var(--kp-navy);
+            color: var(--kp-white);
             font-size: 0.9rem;
-            border-top: 3px solid var(--kp-orange);
+            border-top: 4px solid var(--kp-orange);
         }
     </style>
 </head>
@@ -552,9 +488,9 @@
 
     <!-- HERO -->
     <section class="hero">
-        <h1>"El restaurante conoce su cocina. <br><span class="highlight-orange">Nosotros conocemos el delivery.</span>"</h1>
-        <p>No somos una agencia convencional. Nos integramos dentro de tu estructura como tu área estratégica interna para maximizar ventas, controlar operaciones y proteger tu utilidad neta en Rappi, DiDi Food y Uber Eats.</p>
-        <a href="#contacto" class="btn-hero">Solicitar Evaluación Gratuita</a>
+        <h1>"El restaurante conoce su cocina. <br><span>Nosotros conocemos el delivery.</span>"</h1>
+        <p>No somos una agencia convencional. Nos integramos como tu departamento estratégico de delivery para maximizar ventas, controlar operaciones y proteger tu utilidad neta en Rappi, DiDi Food y Uber Eats.</p>
+        <a href="#contacto" class="btn-navy">Solicitar Evaluación Gratuita</a>
     </section>
 
     <!-- QUIÉNES SOMOS -->
@@ -565,10 +501,10 @@
         <div class="about-grid">
             <div class="about-box">
                 <h3>Gestión Integral de Delivery</h3>
-                <p>Gestionar las plataformas requiere atención diaria, análisis de datos e ingeniería de menú constante. En Kitchen Partner asumimos la responsabilidad operativa, comercial y analítica sobre las apps para que tú te enfoques en la cocina y la experiencia presencial de tu restaurante.</p>
+                <p>Gestionar las plataformas requiere atención diaria, análisis de datos e ingeniería de menú constante. En Kitchen Partner asumimos la responsabilidad operativa, comercial y analítica sobre las apps para que tú te enfocques en la cocina y la experiencia presencial de tu restaurante.</p>
             </div>
             <div>
-                <h3 style="margin-bottom: 20px; color: var(--text-white); font-size: 1.5rem;">¿Qué nos hace distintos?</h3>
+                <h3 style="margin-bottom: 20px; color: var(--kp-navy); font-size: 1.4rem;">¿Qué nos hace distintos?</h3>
                 <ul class="about-list">
                     <li>
                         <span class="check-icon">✓</span>
@@ -588,7 +524,7 @@
     </section>
 
     <!-- QUÉ HACEMOS (LOS 3 EJES) -->
-    <section id="ejes" class="ejes-section">
+    <section id="ejes">
         <h2 class="section-title">Los 3 Ejes de Intervención KP</h2>
         <p class="section-subtitle">Nuestra metodología de trabajo está estructurada para brindar equilibrio operativo y financiero.</p>
 
@@ -636,7 +572,7 @@
     </section>
 
     <!-- PLANES Y PRECIOS -->
-    <section id="planes" class="pricing-section">
+    <section id="planes">
         <div class="pricing-header">
             <h2 class="section-title">Catálogo de Servicios y Planes</h2>
             <p class="section-subtitle">Elige el nivel de acompañamiento que mejor se adapte a la etapa de tu restaurante.</p>
@@ -659,7 +595,7 @@
                     </ul>
                 </div>
                 <div>
-                    <a href="#contacto" class="btn btn-blue-outline" onclick="selectPlan('KP Audit')">Solicitar Auditoría</a>
+                    <a href="#contacto" class="btn btn-navy-outline" onclick="selectPlan('KP Audit')">Solicitar Auditoría</a>
                 </div>
             </div>
 
@@ -678,7 +614,7 @@
                     </ul>
                 </div>
                 <div>
-                    <a href="#contacto" class="btn btn-blue-outline" onclick="selectPlan('KP Start')">Cotizar KP Start</a>
+                    <a href="#contacto" class="btn btn-navy-outline" onclick="selectPlan('KP Start')">Cotizar KP Start</a>
                 </div>
             </div>
 
@@ -719,7 +655,7 @@
                     </ul>
                 </div>
                 <div>
-                    <a href="#contacto" class="btn btn-blue-outline" onclick="selectPlan('KP Enterprise')">Contactar Corporativo</a>
+                    <a href="#contacto" class="btn btn-navy-outline" onclick="selectPlan('KP Enterprise')">Contactar Corporativo</a>
                 </div>
             </div>
 
@@ -727,10 +663,10 @@
     </section>
 
     <!-- FORMULARIO DE CONTACTO -->
-    <section id="contacto" style="background-color: var(--bg-dark);">
+    <section id="contacto">
         <div class="contact-container">
-            <h2>Comienza a Escalar tu Delivery</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Déjanos tus datos y la cantidad de sucursales para enviarte una propuesta personalizada.</p>
+            <h2 style="text-align: center; margin-bottom: 10px;">Comienza a Escalar tu Delivery</h2>
+            <p style="text-align: center; color: var(--kp-text-muted); margin-bottom: 30px;">Déjanos tus datos y la cantidad de sucursales para enviarte una propuesta personalizada.</p>
 
             <form action="https://formsubmit.co/contacto@kitchenpartner.com.mx" method="POST">
                 <input type="hidden" name="_subject" value="Nueva Solicitud de Cotización - Kitchen Partner">
@@ -778,7 +714,7 @@
                     <textarea id="mensaje" name="Mensaje" rows="3" placeholder="Platícanos brevemente sobre tus necesidades operativas..."></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-orange" style="font-size: 1.1rem; padding: 16px;">Enviar Solicitud de Cotización</button>
+                <button type="submit" class="btn btn-navy" style="font-size: 1.05rem; padding: 15px; width: 100%;">Enviar Solicitud de Cotización</button>
             </form>
         </div>
     </section>
