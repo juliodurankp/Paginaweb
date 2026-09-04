@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchen Partner | Tu Socio Estratégico</title>
 
-    <!-- Vista previa para WhatsApp y Redes Sociales -->
     <meta property="og:title" content="Kitchen Partner | Tu Socio Estratégico">
     <meta property="og:description" content="Gestión, administración y escalamiento de marcas restauranteras en plataformas de delivery (Rappi, DiDi Food, Uber Eats).">
     <meta property="og:image" content="https://kitchenpartner.com.mx/k-color.png">
     <meta property="og:url" content="https://kitchenpartner.com.mx/">
     <meta property="og:type" content="website">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="k-color.png">
     <link rel="apple-touch-icon" href="k-color.png">
 
-    <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -50,12 +47,12 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* HEADER */
+        /* HEADER & NAV */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 6%;
+            padding: 1rem 6%;
             background-color: var(--kp-white);
             box-shadow: 0 2px 10px rgba(13, 43, 69, 0.05);
             position: sticky;
@@ -67,15 +64,20 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-weight: 800;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--kp-navy);
             text-transform: uppercase;
         }
 
         .logo img {
-            height: 38px;
+            height: 36px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav a {
@@ -91,23 +93,65 @@
             color: var(--kp-orange);
         }
 
+        /* Botón Menú Hamburguesa */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--kp-navy);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* MEDIA QUERIES PARA MÓVIL */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--kp-white);
+                border-bottom: 2px solid var(--kp-border);
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                padding: 15px 0;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 12px 0;
+                font-size: 1.1rem;
+                text-align: center;
+                width: 100%;
+            }
+        }
+
         /* HERO SECTION */
         .hero {
-            padding: 100px 6% 90px;
+            padding: 70px 6% 60px;
             background-color: var(--kp-white);
             text-align: center;
             border-bottom: 1px solid var(--kp-border);
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.3rem;
             margin-bottom: 20px;
             font-weight: 900;
             color: var(--kp-navy);
             max-width: 950px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.2;
+            line-height: 1.25;
         }
 
         .hero h1 span {
@@ -115,21 +159,21 @@
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             max-width: 780px;
-            margin: 0 auto 35px;
+            margin: 0 auto 30px;
             color: var(--kp-text-muted);
         }
 
         .btn-navy {
             display: inline-block;
-            padding: 16px 38px;
+            padding: 15px 32px;
             background-color: var(--kp-navy);
             color: var(--kp-white);
             text-decoration: none;
             border-radius: 8px;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
             box-shadow: 0 4px 15px rgba(13, 43, 69, 0.15);
             transition: all 0.2s ease;
         }
@@ -137,17 +181,16 @@
         .btn-navy:hover {
             background-color: #081B2C;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(13, 43, 69, 0.25);
         }
 
         /* SECCIONES GENERALES */
         section {
-            padding: 85px 6%;
+            padding: 60px 6%;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.3rem;
+            font-size: 1.9rem;
             margin-bottom: 12px;
             color: var(--kp-navy);
             font-weight: 800;
@@ -157,23 +200,22 @@
             text-align: center;
             color: var(--kp-text-muted);
             max-width: 720px;
-            margin: 0 auto 55px;
-            font-size: 1.05rem;
+            margin: 0 auto 40px;
+            font-size: 1rem;
         }
 
         /* QUIÉNES SOMOS */
         .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             max-width: 1150px;
             margin: 0 auto;
-            align-items: center;
         }
 
         .about-box {
             background-color: var(--kp-white);
-            padding: 40px;
+            padding: 30px;
             border-radius: 12px;
             border-left: 6px solid var(--kp-orange);
             box-shadow: 0 4px 20px rgba(13, 43, 69, 0.05);
@@ -183,7 +225,7 @@
         }
 
         .about-box h3 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin-bottom: 15px;
             color: var(--kp-navy);
             font-weight: 700;
@@ -195,15 +237,11 @@
 
         .about-list li {
             margin-bottom: 16px;
-            font-size: 1.05rem;
+            font-size: 1rem;
             display: flex;
             align-items: flex-start;
             gap: 12px;
             color: var(--kp-text-dark);
-        }
-
-        .about-list li strong {
-            color: var(--kp-navy);
         }
 
         .check-icon {
@@ -215,8 +253,8 @@
         /* LOS 3 EJES */
         .ejes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
             max-width: 1150px;
             margin: 0 auto;
         }
@@ -224,7 +262,7 @@
         .eje-card {
             border: 1px solid var(--kp-border);
             border-radius: 12px;
-            padding: 40px 30px;
+            padding: 30px 20px;
             background: var(--kp-white);
             text-align: center;
             box-shadow: 0 4px 15px rgba(13, 43, 69, 0.04);
@@ -232,43 +270,43 @@
         }
 
         .eje-card .icon-box {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             background-color: var(--kp-bg-light);
             color: var(--kp-orange);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 20px;
+            font-size: 1.6rem;
+            margin: 0 auto 18px;
             font-weight: bold;
         }
 
         .eje-card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 12px;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
             color: var(--kp-navy);
             font-weight: 700;
         }
 
         .eje-card p {
             color: var(--kp-text-muted);
-            font-size: 0.98rem;
+            font-size: 0.95rem;
         }
 
         /* METODOLOGÍA */
         .timeline {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
             max-width: 1150px;
             margin: 0 auto;
         }
 
         .phase-card {
             background: var(--kp-white);
-            padding: 35px 30px;
+            padding: 30px 25px;
             border-radius: 12px;
             border: 1px solid var(--kp-border);
             box-shadow: 0 4px 15px rgba(13, 43, 69, 0.04);
@@ -279,28 +317,29 @@
             background: var(--kp-orange);
             color: var(--kp-white);
             font-weight: 700;
-            font-size: 0.85rem;
-            padding: 5px 12px;
+            font-size: 0.8rem;
+            padding: 4px 10px;
             border-radius: 20px;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
 
         .phase-card h3 {
             color: var(--kp-navy);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 10px;
             font-weight: 700;
         }
 
         .phase-card p {
             color: var(--kp-text-muted);
+            font-size: 0.95rem;
         }
 
         /* PLANES Y PRECIOS */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
@@ -309,18 +348,13 @@
         .pricing-card {
             border: 1px solid var(--kp-border);
             border-radius: 12px;
-            padding: 35px 25px;
+            padding: 30px 20px;
             background-color: var(--kp-white);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(13, 43, 69, 0.08);
         }
 
         .pricing-card.featured {
@@ -334,36 +368,35 @@
             right: 15px;
             background-color: var(--kp-orange);
             color: var(--kp-white);
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 800;
-            letter-spacing: 0.5px;
         }
 
         .plan-title {
-            font-size: 1.45rem;
+            font-size: 1.35rem;
             font-weight: 800;
             margin-bottom: 5px;
             color: var(--kp-navy);
         }
 
         .price-prefix {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--kp-text-muted);
             text-transform: uppercase;
             font-weight: 700;
         }
 
         .price {
-            font-size: 2.1rem;
+            font-size: 1.9rem;
             font-weight: 800;
             color: var(--kp-navy);
             margin-bottom: 18px;
         }
 
         .price span {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
             color: var(--kp-text-muted);
         }
@@ -374,8 +407,8 @@
         }
 
         .features-list li {
-            margin-bottom: 11px;
-            font-size: 0.92rem;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
             display: flex;
             align-items: flex-start;
             gap: 8px;
@@ -391,7 +424,7 @@
         .btn {
             display: block;
             width: 100%;
-            padding: 13px;
+            padding: 12px;
             text-align: center;
             text-decoration: none;
             border-radius: 6px;
@@ -427,7 +460,7 @@
             max-width: 620px;
             margin: 0 auto;
             background: var(--kp-white);
-            padding: 45px 35px;
+            padding: 35px 25px;
             border-radius: 14px;
             box-shadow: 0 6px 20px rgba(13, 43, 69, 0.06);
             border: 1px solid var(--kp-border);
@@ -436,26 +469,27 @@
         .contact-container h2 {
             color: var(--kp-navy);
             font-weight: 800;
+            font-size: 1.6rem;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .form-group label {
             display: block;
             font-weight: 700;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
+            margin-bottom: 6px;
+            font-size: 0.88rem;
             color: var(--kp-navy);
         }
 
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 13px;
+            padding: 12px;
             border: 1px solid var(--kp-border);
             border-radius: 6px;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             background-color: var(--kp-bg-light);
             color: var(--kp-text-dark);
         }
@@ -469,10 +503,10 @@
 
         footer {
             text-align: center;
-            padding: 35px;
+            padding: 30px 20px;
             background-color: var(--kp-navy);
             color: var(--kp-white);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border-top: 4px solid var(--kp-orange);
         }
     </style>
@@ -484,23 +518,24 @@
             <img src="k-color.png" alt="Kitchen Partner Logo">
             <span>Kitchen Partner</span>
         </div>
-        <nav>
-            <a href="#quienes-somos">Nosotros</a>
-            <a href="#ejes">Estrategia</a>
-            <a href="#metodologia">Metodología</a>
-            <a href="#planes">Planes</a>
-            <a href="#contacto">Contacto</a>
+        
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+        <nav id="navMenu">
+            <a href="#quienes-somos" onclick="toggleMenu()">Nosotros</a>
+            <a href="#ejes" onclick="toggleMenu()">Estrategia</a>
+            <a href="#metodologia" onclick="toggleMenu()">Metodología</a>
+            <a href="#planes" onclick="toggleMenu()">Planes</a>
+            <a href="#contacto" onclick="toggleMenu()">Contacto</a>
         </nav>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
         <h1>"El restaurante conoce su cocina. <br><span>Nosotros conocemos el delivery.</span>"</h1>
         <p>No somos una agencia convencional. Nos integramos como tu departamento estratégico de delivery para maximizar ventas, controlar operaciones y proteger tu utilidad neta en Rappi, DiDi Food y Uber Eats.</p>
         <a href="#contacto" class="btn-navy">Solicitar Evaluación Gratuita</a>
     </section>
 
-    <!-- QUIÉNES SOMOS -->
     <section id="quienes-somos">
         <h2 class="section-title">Tu Socio Estratégico en Plataformas</h2>
         <p class="section-subtitle">Acompañamos a marcas restauranteras para pasar de la ceguera operativa al crecimiento rentable.</p>
@@ -511,7 +546,7 @@
                 <p>Gestionar las plataformas requiere atención diaria, análisis de datos e ingeniería de menú constante. En Kitchen Partner asumimos la responsabilidad operativa, comercial y analítica sobre las apps para que tú te enfocques en la cocina y la experiencia presencial de tu restaurante.</p>
             </div>
             <div>
-                <h3 style="margin-bottom: 20px; color: var(--kp-navy); font-size: 1.4rem;">¿Qué nos hace distintos?</h3>
+                <h3 style="margin-bottom: 15px; color: var(--kp-navy); font-size: 1.3rem;">¿Qué nos hace distintos?</h3>
                 <ul class="about-list">
                     <li>
                         <span class="check-icon">✓</span>
@@ -530,7 +565,6 @@
         </div>
     </section>
 
-    <!-- QUÉ HACEMOS (LOS 3 EJES) -->
     <section id="ejes">
         <h2 class="section-title">Los 3 Ejes de Intervención KP</h2>
         <p class="section-subtitle">Nuestra metodología de trabajo está estructurada para brindar equilibrio operativo y financiero.</p>
@@ -554,7 +588,6 @@
         </div>
     </section>
 
-    <!-- CÓMO LO HACEMOS (METODOLOGÍA) -->
     <section id="metodologia">
         <h2 class="section-title">Metodología Plan 30 / 60 / 90 Días™</h2>
         <p class="section-subtitle">Un proceso estructurado para construir cimientos sólidos y garantizar resultados medibles.</p>
@@ -578,16 +611,14 @@
         </div>
     </section>
 
-    <!-- PLANES Y PRECIOS -->
     <section id="planes">
-        <div class="pricing-header">
+        <div>
             <h2 class="section-title">Catálogo de Servicios y Planes</h2>
             <p class="section-subtitle">Elige el nivel de acompañamiento que mejor se adapte a la etapa de tu restaurante.</p>
         </div>
 
         <div class="pricing-grid">
             
-            <!-- KP AUDIT -->
             <div class="pricing-card">
                 <div>
                     <div class="plan-title">KP Audit</div>
@@ -606,7 +637,6 @@
                 </div>
             </div>
 
-            <!-- KP START -->
             <div class="pricing-card">
                 <div>
                     <div class="plan-title">KP Start</div>
@@ -625,7 +655,6 @@
                 </div>
             </div>
 
-            <!-- KP GROWTH -->
             <div class="pricing-card featured">
                 <div class="badge">RECOMENDADO (KP 360™)</div>
                 <div>
@@ -647,7 +676,6 @@
                 </div>
             </div>
 
-            <!-- KP ENTERPRISE -->
             <div class="pricing-card">
                 <div>
                     <div class="plan-title">KP Enterprise</div>
@@ -669,11 +697,10 @@
         </div>
     </section>
 
-    <!-- FORMULARIO DE CONTACTO CONECTADO A GOOGLE SHEETS -->
     <section id="contacto">
         <div class="contact-container">
             <h2 style="text-align: center; margin-bottom: 10px;">Comienza a Escalar tu Delivery</h2>
-            <p style="text-align: center; color: var(--kp-text-muted); margin-bottom: 30px;">Déjanos tus datos y la cantidad de sucursales para enviarte una propuesta personalizada.</p>
+            <p style="text-align: center; color: var(--kp-text-muted); margin-bottom: 25px; font-size: 0.95rem;">Déjanos tus datos y la cantidad de sucursales para enviarte una propuesta personalizada.</p>
 
             <form id="kpForm">
                 <div class="form-group">
@@ -718,7 +745,7 @@
                     <textarea id="mensaje" name="Mensaje" rows="3" placeholder="Platícanos brevemente sobre tus necesidades operativas..."></textarea>
                 </div>
 
-                <button type="submit" id="btnSubmit" class="btn btn-navy" style="font-size: 1.05rem; padding: 15px; width: 100%;">Enviar Solicitud de Cotización</button>
+                <button type="submit" id="btnSubmit" class="btn btn-navy" style="font-size: 1rem; padding: 14px; width: 100%;">Enviar Solicitud de Cotización</button>
                 <p id="formStatus" style="text-align: center; margin-top: 15px; font-weight: bold; display: none;"></p>
             </form>
         </div>
@@ -728,7 +755,22 @@
         <p>&copy; Kitchen Partner. Todos los derechos reservados. | Mexicali, Baja California, México | contacto@kitchenpartner.com.mx</p>
     </footer>
 
-   <script>
+    <script>
+        // Lógica Menú Móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        function toggleMenu() {
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+            }
+        }
+
+        // Lógica Formulario a Google Sheets
         const scriptURL = 'https://script.google.com/macros/s/AKfycbx-sA5A6ykOpPpDOQoOhGOtAfR9zSGGz6xuzjLWZ6DCxPp6R2clk1O5VALx6xM9ny30/exec';
         const form = document.getElementById('kpForm');
         const statusText = document.getElementById('formStatus');
