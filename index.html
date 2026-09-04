@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kitchen Partner | Tu Socio Estratégico en Delivery</title>
+    <title>Kitchen Partner | Consultoría Estratégica en Delivery</title>
     
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="k-color.png">
     <link rel="apple-touch-icon" href="k-color.png">
 
@@ -61,10 +62,15 @@
             text-decoration: none;
             color: var(--dark-gray);
             font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
         }
 
         .hero {
-            padding: 80px 5%;
+            padding: 100px 5% 80px;
             text-align: center;
             background: linear-gradient(135deg, #F0F7FF 0%, #FFF5EB 100%);
         }
@@ -73,34 +79,137 @@
             font-size: 2.8rem;
             margin-bottom: 20px;
             color: var(--dark-gray);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 650px;
+            font-size: 1.25rem;
+            max-width: 750px;
             margin: 0 auto 30px;
-            color: #555;
+            color: #444;
         }
 
-        .pricing-section {
+        .hero .btn-hero {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        section {
             padding: 80px 5%;
-            background-color: #ffffff;
         }
 
-        .pricing-header {
+        .section-title {
             text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .pricing-header h2 {
             font-size: 2.2rem;
+            margin-bottom: 15px;
             color: var(--dark-gray);
         }
 
-        .pricing-grid {
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.05rem;
+        }
+
+        /* Seccion Quienes Somos */
+        .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .about-box {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-orange);
+        }
+
+        .about-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        /* Seccion Ejes (Que Hacemos) */
+        .ejes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .eje-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px 25px;
+            background: #fff;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .eje-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-orange);
+        }
+
+        .eje-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        /* Seccion Metodologia (Como lo hacemos) */
+        .methodology-bg {
+            background-color: var(--light-gray);
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .phase-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .phase-tag {
+            display: inline-block;
+            background: #E6F2FF;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        /* Seccion Tarifas / Planes */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -108,7 +217,7 @@
         .pricing-card {
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 40px 30px;
+            padding: 35px 25px;
             background-color: #ffffff;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
@@ -128,60 +237,59 @@
 
         .badge {
             position: absolute;
-            top: -15px;
-            right: 20px;
+            top: -14px;
+            right: 15px;
             background-color: var(--primary-orange);
             color: white;
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: bold;
         }
 
         .plan-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: bold;
             margin-bottom: 5px;
         }
 
         .price-prefix {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #666;
             text-transform: uppercase;
-            letter-spacing: 1px;
             font-weight: 600;
         }
 
         .price {
-            font-size: 2.4rem;
+            font-size: 2.1rem;
             font-weight: bold;
             color: var(--dark-gray);
             margin-bottom: 15px;
         }
 
         .price span {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-weight: normal;
             color: #666;
         }
 
         .features-list {
             list-style: none;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .features-list li {
-            margin-bottom: 12px;
-            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
             display: flex;
-            align-items: center;
-            gap: 10px;
+            align-items: flex-start;
+            gap: 8px;
         }
 
         .btn {
             display: block;
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             text-align: center;
             text-decoration: none;
             border-radius: 6px;
@@ -189,6 +297,7 @@
             transition: background-color 0.2s;
             border: none;
             cursor: pointer;
+            font-size: 0.95rem;
         }
 
         .btn-primary {
@@ -210,9 +319,8 @@
             background-color: var(--light-gray);
         }
 
-        /* Sección de Formulario */
+        /* Formulario */
         .contact-section {
-            padding: 80px 5%;
             background-color: var(--light-gray);
         }
 
@@ -223,18 +331,6 @@
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .contact-container h2 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .contact-container p {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 0.95rem;
         }
 
         .form-group {
@@ -273,24 +369,119 @@
             <span>Kitchen Partner</span>
         </div>
         <nav>
+            <a href="#quienes-somos">Nosotros</a>
+            <a href="#ejes">Estrategia</a>
+            <a href="#metodologia">Metodología</a>
             <a href="#planes">Planes</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
-        <h1>El restaurante conoce su cocina. Nosotros conocemos el delivery.</h1>
-        <p>Gestión estratégica, control operativo y optimización de rentabilidad en Rappi, DiDi Food y Uber Eats.</p>
+        <h1>"El restaurante conoce su cocina. Nosotros conocemos el delivery."</h1>
+        <p>No somos una agencia convencional. Nos integramos como tu departamento estratégico de delivery para maximizar ventas, controlar operaciones y proteger tu utilidad neta en Rappi, DiDi Food y Uber Eats.</p>
+        <a href="#contacto" class="btn-hero">Solicitar Evaluación Gratuita</a>
     </section>
 
-    <section class="pricing-section" id="planes">
+    <!-- QUIÉNES SOMOS -->
+    <section id="quienes-somos">
+        <h2 class="section-title">Tu Socio Estratégico en Plataformas</h2>
+        <p class="section-subtitle">Acompañamos a marcas restauranteras para pasar de la ceguera operativa al crecimiento rentable.</p>
+
+        <div class="about-grid">
+            <div class="about-box">
+                <h3>Gestión Integral de Delivery</h3>
+                <p>Gestionar las plataformas requiere atención diaria, análisis de datos e ingeniería de menú constante. En Kitchen Partner asumimos la responsabilidad operativa, comercial y analítica para que tú te enfoques en la cocina y la experiencia presencial.</p>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 15px; color: var(--dark-gray);">¿Qué nos hace distintos?</h3>
+                <ul style="list-style: none; font-size: 1rem;">
+                    <li style="margin-bottom: 12px;">✔️ <strong>Protección de Margen:</strong> Crecemos la facturación sin diluir tu utilidad por comisiones o descuentos a ciegas.</li>
+                    <li style="margin-bottom: 12px;">✔️ <strong>Recuperación de Dinero:</strong> Protocolo activo de aclaración de reembolsos e incidencias injustificadas.</li>
+                    <li style="margin-bottom: 12px;">✔️ <strong>Decisiones Basadas en Data:</strong> Estrategia impulsada por dashboards semanales e ingeniería de precios.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUÉ HACEMOS (LOS 3 EJES) -->
+    <section id="ejes" style="background-color: var(--light-gray);">
+        <h2 class="section-title">Los 3 Ejes de Intervención KP</h2>
+        <p class="section-subtitle">Nuestra metodología de trabajo está estructurada para brindar equilibrio operativo y financiero.</p>
+
+        <div class="ejes-grid">
+            <div class="eje-card">
+                <div class="icon">🛡️</div>
+                <h3>1. CONTROL OPERATIVO</h3>
+                <p>Estandarización de horarios, control estricto de rechazos y cancelaciones, y recuperación activa de reembolsos por incidencias.</p>
+            </div>
+            <div class="eje-card">
+                <div class="icon">📈</div>
+                <h3>2. CRECIMIENTO</h3>
+                <p>Aumento de la tasa de conversión, captación de usuarios nuevos, incremento del ticket promedio y posicionamiento algorítmico.</p>
+            </div>
+            <div class="eje-card">
+                <div class="icon">⚖️</div>
+                <h3>3. RENTABILIDAD</h3>
+                <p>Protección estricta del margen neto de contribución tras descontar comisiones de las apps, empaque y pauta publicitaria.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓMO LO HACEMOS (METODOLOGÍA) -->
+    <section id="metodologia">
+        <h2 class="section-title">Metodología Plan 30 / 60 / 90 Días™</h2>
+        <p class="section-subtitle">Un proceso estructurado para construir cimientos sólidos y garantizar resultados medibles.</p>
+
+        <div class="timeline">
+            <div class="phase-card">
+                <span class="phase-tag">DÍAS 1 A 30</span>
+                <h3>Diagnóstico & Control</h3>
+                <p>Auditoría completa de menús, arquitectura de precios, homologación de horarios y activación del protocolo de recuperación de reembolsos.</p>
+            </div>
+            <div class="phase-card">
+                <span class="phase-tag">DÍAS 31 A 60</span>
+                <h3>Optimización & Demanda</h3>
+                <p>Estudio de competencia en la zona, ingeniería de menú (Menu Engineering), tendencias de consumo y diseño de promociones inteligentes.</p>
+            </div>
+            <div class="phase-card">
+                <span class="phase-tag">DÍAS 61 A 90</span>
+                <h3>Escalabilidad & Rentabilidad</h3>
+                <p>Calibración de campañas de pauta (Ads), auditoría fina de margen de contribución y sesión trimestral ejecutiva de revisión (Business Review).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANES Y PRECIOS -->
+    <section id="planes" class="pricing-section" style="background-color: var(--light-gray);">
         <div class="pricing-header">
-            <h2>Estructura de Servicios y Planes</h2>
-            <p>Selecciona el nivel de acompañamiento operativo ideal para tu restaurante.</p>
+            <h2 class="section-title">Catálogo de Servicios y Planes</h2>
+            <p class="section-subtitle">Elige el nivel de acompañamiento que mejor se adapte a la etapa de tu restaurante.</p>
         </div>
 
         <div class="pricing-grid">
             
+            <!-- KP AUDIT -->
+            <div class="pricing-card">
+                <div>
+                    <div class="plan-title">KP Audit</div>
+                    <div class="price-prefix">Pago Único</div>
+                    <div class="price">$5,000 <span>MXN + IVA</span></div>
+                    
+                    <ul class="features-list">
+                        <li>✓ Auditoría 360° en Rappi, DiDi y Uber Eats</li>
+                        <li>✓ Diagnóstico financiero y fugas de dinero</li>
+                        <li>✓ Revisión preliminar de arquitectura de precios</li>
+                        <li>✓ Sesión de entrega de recomendaciones</li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="#contacto" class="btn btn-outline" onclick="selectPlan('KP Audit')">Solicitar Auditoría</a>
+                </div>
+            </div>
+
+            <!-- KP START -->
             <div class="pricing-card">
                 <div>
                     <div class="plan-title">KP Start</div>
@@ -298,19 +489,18 @@
                     <div class="price">$3,500 <span>MXN / mes + IVA</span></div>
                     
                     <ul class="features-list">
-                        <li>✓ Gestión en Rappi, DiDi Food y Uber Eats</li>
-                        <li>✓ Administración operativa (ejecución a petición)</li>
+                        <li>✓ Administración operativa pasiva</li>
+                        <li>✓ Gestión de menús, precios y horarios</li>
                         <li>✓ Gestión de reembolsos e incidencias</li>
-                        <li>✓ Carga de menús, precios y horarios</li>
                         <li>✓ Dashboard & reporte mensual básico</li>
                     </ul>
                 </div>
-
                 <div>
                     <a href="#contacto" class="btn btn-outline" onclick="selectPlan('KP Start')">Cotizar KP Start</a>
                 </div>
             </div>
 
+            <!-- KP GROWTH -->
             <div class="pricing-card featured">
                 <div class="badge">RECOMENDADO (KP 360™)</div>
                 <div>
@@ -323,16 +513,16 @@
                         <li>✓ Análisis de competencia y zona</li>
                         <li>✓ Estudio de platillos top & tendencias</li>
                         <li>✓ Ingeniería de menú y rentabilidad</li>
-                        <li>✓ Diseño de promociones data-driven</li>
-                        <li>✓ Reportes semanales y reunión mensual</li>
+                        <li>✓ Diseños de promociones data-driven</li>
+                        <li>✓ Reporte semanal analítico y reunión mensual</li>
                     </ul>
                 </div>
-
                 <div>
                     <a href="#contacto" class="btn btn-primary" onclick="selectPlan('KP Growth')">Cotizar KP Growth</a>
                 </div>
             </div>
 
+            <!-- KP ENTERPRISE -->
             <div class="pricing-card">
                 <div>
                     <div class="plan-title">KP Enterprise</div>
@@ -340,14 +530,12 @@
                     <div class="price">Cotización</div>
                     
                     <ul class="features-list">
-                        <li>✓ Cobertura multi-sucursal y multicanal</li>
+                        <li>✓ Solución multicanal a la medida</li>
                         <li>✓ Integración con canales propios</li>
                         <li>✓ Business Intelligence (BI) personalizado</li>
-                        <li>✓ Consultor dedicado y SLAs a medida</li>
-                        <li>✓ Estrategias avanzadas por volumen</li>
+                        <li>✓ Consultor dedicado y SLAs personalizados</li>
                     </ul>
                 </div>
-
                 <div>
                     <a href="#contacto" class="btn btn-outline" onclick="selectPlan('KP Enterprise')">Contactar Corporativo</a>
                 </div>
@@ -356,10 +544,11 @@
         </div>
     </section>
 
-    <section class="contact-section" id="contacto">
+    <!-- FORMULARIO DE CONTACTO -->
+    <section id="contacto" class="contact-section">
         <div class="contact-container">
-            <h2>Solicita tu Cotización Personalizada</h2>
-            <p>Indícanos tus datos y la cantidad de sucursales que operan para preparar tu propuesta a la medida.</p>
+            <h2 style="text-align: center; margin-bottom: 10px;">Comienza a Escalar tu Delivery</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">Déjanos tus datos y la cantidad de sucursales para enviarte una propuesta personalizada.</p>
 
             <form action="https://formsubmit.co/contacto@kitchenpartner.com.mx" method="POST">
                 <input type="hidden" name="_subject" value="Nueva Solicitud de Cotización - Kitchen Partner">
@@ -381,11 +570,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="plan">Plan de Interés</label>
-                    <select id="plan" name="Plan_de_Interes">
-                        <option value="KP Start">KP Start (Desde $3,500 MXN + IVA)</option>
-                        <option value="KP Growth">KP Growth (Desde $4,900 MXN + IVA)</option>
-                        <option value="KP Enterprise">KP Enterprise (Grandes Cadenas / Franquicias)</option>
+                    <label for="plan">Servicio de Interés</label>
+                    <select id="plan" name="Servicio_de_Interes">
+                        <option value="KP Audit">KP Audit ($5,000 MXN + IVA - Pago Único)</option>
+                        <option value="KP Start">KP Start (Desde $3,500 MXN/mes + IVA)</option>
+                        <option value="KP Growth">KP Growth ⭐ (Desde $4,900 MXN/mes + IVA)</option>
+                        <option value="KP Enterprise">KP Enterprise (Cadenas / Franquicias)</option>
                     </select>
                 </div>
 
@@ -402,7 +592,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="mensaje">Mensaje / Requerimientos Especiales (Opcional)</label>
+                    <label for="mensaje">Mensaje / Comentarios (Opcional)</label>
                     <textarea id="mensaje" name="Mensaje" rows="3" placeholder="Platícanos brevemente sobre tus necesidades operativas..."></textarea>
                 </div>
 
@@ -412,7 +602,7 @@
     </section>
 
     <footer>
-        <p>&copy; Kitchen Partner. Todos los derechos reservados. | contacto@kitchenpartner.com.mx</p>
+        <p>&copy; Kitchen Partner. Todos los derechos reservados. | Mexicali, Baja California, México | contacto@kitchenpartner.com.mx</p>
     </footer>
 
     <script>
