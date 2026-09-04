@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Partner | Tu Socio Estratégico en Delivery</title>
+    <!-- Tipografía Oficial -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --kp-navy: #0D2B45;      /* Azul Marino Oficial */
+            --kp-coral: #FF6B4A;     /* Naranja Coral Oficial */
+            --kp-bg-light: #F2F4F7;  /* Gris Claro Neutro Oficial */
+            --kp-white: #FFFFFF;
+            --kp-text-muted: #475569;
+            --kp-border: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--kp-bg-light);
+            color: var(--kp-navy);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* BARRA SUPERIOR Y NAVEGACIÓN */
+        header {
+            background-color: var(--kp-white);
+            border-bottom: 1px solid var(--kp-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--kp-navy);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-logo-text span {
+            color: var(--kp-coral);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--kp-navy);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--kp-coral);
+        }
+
+        .btn-cta {
+            background-color: var(--kp-coral);
+            color: var(--kp-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            background-color: #E55A39;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--kp-navy);
+            border: 2px solid var(--kp-navy);
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--kp-navy);
+            color: var(--kp-white);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            background-color: rgba(255, 107, 74, 0.12);
+            color: var(--kp-coral);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--kp-text-muted);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .hero-box {
+            background-color: var(--kp-navy);
+            color: var(--kp-white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 12px 32px rgba(13, 43, 69, 0.15);
+        }
+
+        .hero-box-quote {
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: var(--kp-white);
+            border-left: 4px solid var(--kp-coral);
+            padding-left: 1rem;
+        }
+
+        .hero-box-desc {
+            color: #CBD5E1;
+            font-size: 0.95rem;
+        }
+
+        /* EJES DE INTERVENCIÓN (3 EJES) */
+        .ejes-section {
+            background-color: var(--kp-white);
+            padding: 5rem 2rem;
+            border-top: 1px solid var(--kp-border);
+            border-bottom: 1px solid var(--kp-border);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem auto;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            color: var(--kp-text-muted);
+            font-size: 1.05rem;
+        }
+
+        .ejes-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .eje-card {
+            background-color: var(--kp-bg-light);
+            padding: 2.5rem 2rem;
+            border-radius: 14px;
+            border-top: 4px solid var(--kp-coral);
+            transition: transform 0.2s;
+        }
+
+        .eje-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .eje-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .eje-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            color: var(--kp-navy);
+        }
+
+        .eje-card p {
+            color: var(--kp-text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* METODOLOGÍA PLAN 30 / 60 / 90 DÍAS */
+        .plan-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .plan-timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .plan-step {
+            background-color: var(--kp-white);
+            padding: 2rem;
+            border-radius: 14px;
+            border: 1px solid var(--kp-border);
+            position: relative;
+        }
+
+        .plan-step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .plan-number {
+            background-color: var(--kp-navy);
+            color: var(--kp-white);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .plan-step h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--kp-navy);
+        }
+
+        .plan-step ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .plan-step li {
+            font-size: 0.9rem;
+            color: var(--kp-text-muted);
+            margin-bottom: 0.6rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .plan-step li::before {
+            content: "✓";
+            color: var(--kp-coral);
+            position: absolute;
+            left: 0;
+            font-weight: 800;
+        }
+
+        /* MATRIZ DE PLANES */
+        .pricing-section {
+            background-color: var(--kp-white);
+            padding: 5rem 2rem;
+            border-top: 1px solid var(--kp-border);
+        }
+
+        .pricing-grid {
+            max-width: 1200px;
+            margin: 3rem auto 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .pricing-card {
+            background-color: var(--kp-bg-light);
+            border-radius: 14px;
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--kp-border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            background-color: var(--kp-navy);
+            color: var(--kp-white);
+            border: 2px solid var(--kp-coral);
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(13, 43, 69, 0.2);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background-color: var(--kp-coral);
+            color: var(--kp-white);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            color: var(--kp-coral);
+        }
+
+        .pricing-price span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--kp-text-muted);
+        }
+
+        .pricing-card.featured .pricing-price span {
+            color: #94A3B8;
+        }
+
+        .pricing-desc {
+            font-size: 0.88rem;
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+        }
+
+        /* SECCIÓN DE CONTACTO Y FORMULARIO */
+        .contact-section {
+            padding: 5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background-color: var(--kp-white);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--kp-border);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.88rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--kp-coral);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--kp-navy);
+            color: var(--kp-white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #94A3B8;
+        }
+
+        footer strong {
+            color: var(--kp-white);
+        }
+
+        /* RESPONSIVO MÓVIL */
+        @media (max-width: 992px) {
+            .hero, .ejes-grid, .plan-timeline, .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            .hero-title {
+                font-size: 2.4rem;
+            }
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-logo-text">
+                KITCHEN <span>PARTNER</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#filosofia" class="nav-link">Filosofía</a></li>
+                <li><a href="#metodologia" class="nav-link">Plan 30/60/90™</a></li>
+                <li><a href="#planes" class="nav-link">Planes</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="#" class="btn-secondary">Acceso Clientes</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div>
+            <span class="hero-badge">Consultoría Estratégica en Delivery</span>
+            <h1 class="hero-title">Tu Socio Estratégico en <span>Delivery</span></h1>
+            <p class="hero-subtitle">Gestionamos, analizamos y optimizamos el negocio de tu restaurante en Rappi, DiDi Food y Uber Eats para impulsar ventas, mejorar la operación y proteger tu rentabilidad.</p>
+            <div class="hero-actions">
+                <a href="#contacto" class="btn-cta">Agendar Sesión de Diagnóstico</a>
+                <a href="#planes" class="btn-secondary">Ver Planes</a>
+            </div>
+        </div>
+        <div class="hero-box">
+            <div class="hero-box-quote">"El restaurante conoce su cocina. Nosotros conocemos el delivery."</div>
+            <p class="hero-box-desc">No somos una agencia de marketing tradicional ni un proveedor aislado: nos integramos como tu departamento interno de delivery.</p>
+        </div>
+    </section>
+
+    <!-- LOS 3 EJES DE INTERVENCIÓN -->
+    <section id="filosofia" class="ejes-section">
+        <div class="section-header">
+            <h2 class="section-title">Nuestra Filosofía de Trabajo</h2>
+            <p class="section-subtitle">Tres pilares fundamentales para escalar tu canal de entrega a domicilio con certitud técnica y financiera.</p>
+        </div>
+
+        <div class="ejes-grid">
+            <div class="eje-card">
+                <div class="eje-icon">📈</div>
+                <h3>Crecimiento</h3>
+                <p>Desarrollamos el volumen de órdenes, ventas brutas, ticket promedio y porcentaje de conversión de usuarios nuevos y recurrentes.</p>
+            </div>
+            <div class="eje-card">
+                <div class="eje-icon">🎯</div>
+                <h3>Control</h3>
+                <p>Eliminamos la ceguera operativa con estandarización de horarios, gestión de disponibilidad, control de cancelaciones y recuperación activa de reembolsos.</p>
+            </div>
+            <div class="eje-card">
+                <div class="eje-icon">💲</div>
+                <h3>Rentabilidad</h3>
+                <p>Protegemos tu margen neto. Vender más solo tiene sentido si el margen real del restaurante mejora tras comisiones, descuentos y costo de empaque.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- METODOLOGÍA PLAN 30 / 60 / 90 DÍAS -->
+    <section id="metodologia" class="plan-section">
+        <div class="section-header">
+            <h2 class="section-title">Plan de Trabajo 30 / 60 / 90 Días™</h2>
+            <p class="section-subtitle">Construir un canal de delivery rentable requiere tiempo de maduración técnica, algorítmica y financiera.</p>
+        </div>
+
+        <div class="plan-timeline">
+            <div class="plan-step">
+                <div class="plan-step-header">
+                    <div class="plan-number">1</div>
+                    <h4>Días 1 a 30: Cimientos & Control</h4>
+                </div>
+                <ul>
+                    <li>Auditoría e inventario completo de menús y precios.</li>
+                    <li>Estandarización de horarios y reglas anti-cierre.</li>
+                    <li>Protocolo de recuperación de reembolsos por incidencias.</li>
+                    <li>Implementación del Dashboard de KPIs.</li>
+                </ul>
+            </div>
+
+            <div class="plan-step">
+                <div class="plan-step-header">
+                    <div class="plan-number">2</div>
+                    <h4>Días 31 a 60: Ingeniería & Demanda</h4>
+                </div>
+                <ul>
+                    <li>Análisis de competencia y radio de cobertura.</li>
+                    <li>Estudio de platillos top y tendencias locales.</li>
+                    <li>Ingeniería de Menú (Menu Engineering) optimizada.</li>
+                    <li>Diseño de promociones y campañas de Ads data-driven.</li>
+                </ul>
+            </div>
+
+            <div class="plan-step">
+                <div class="plan-step-header">
+                    <div class="plan-number">3</div>
+                    <h4>Días 61 a 90: Escalabilidad & ROAS</h4>
+                </div>
+                <ul>
+                    <li>Optimización continua del retorno de inversión (ROAS).</li>
+                    <li>Auditoría de margen de contribución real por platillo.</li>
+                    <li>Calibración de promociones en horarios pico.</li>
+                    <li>Business Review y planeación del siguiente trimestre.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTRUCTURA DE PLANES Y PRECIOS -->
+    <section id="planes" class="pricing-section">
+        <div class="section-header">
+            <h2 class="section-title">Estructura de Planes</h2>
+            <p class="section-subtitle">Una solución diseñada para cada etapa de madurez de tu negocio gastronómico.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- KP AUDIT -->
+            <div class="pricing-card">
+                <div>
+                    <h3>KP Audit</h3>
+                    <p class="pricing-desc">Diagnóstico 360° puntual para identificar fugas de dinero e ineficiencias de canal.</p>
+                    <div class="pricing-price">$5,000 <span>MXN (Único)</span></div>
+                </div>
+                <a href="#contacto" class="btn-secondary" style="text-align: center; display: block;">Solicitar Auditoría</a>
+            </div>
+
+            <!-- KP START -->
+            <div class="pricing-card">
+                <div>
+                    <h3>KP Start</h3>
+                    <p class="pricing-desc">Administración pasiva. Mantenimiento de cuentas, actualización de menús e incidencias.</p>
+                    <div class="pricing-price">$3,500 <span>MXN / mes</span></div>
+                </div>
+                <a href="#contacto" class="btn-secondary" style="text-align: center; display: block;">Elegir KP Start</a>
+            </div>
+
+            <!-- KP GROWTH (DESTACADO) -->
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Recomendado</div>
+                <div>
+                    <h3>KP Growth</h3>
+                    <p class="pricing-desc">Metodología KP 360™. Consultoría proactiva, ingeniería de menú, análisis de zona y Ads.</p>
+                    <div class="pricing-price" style="color: var(--kp-white);">$4,900 <span style="color: #94A3B8;">MXN / mes</span></div>
+                </div>
+                <a href="#contacto" class="btn-cta" style="text-align: center; display: block;">Elegir KP Growth</a>
+            </div>
+
+            <!-- KP ENTERPRISE -->
+            <div class="pricing-card">
+                <div>
+                    <h3>KP Enterprise</h3>
+                    <p class="pricing-desc">Solución multicanal personalizada para marcas multisucursal, cadenas o franquicias.</p>
+                    <div class="pricing-price">Cotización <span>a la medida</span></div>
+                </div>
+                <a href="#contacto" class="btn-secondary" style="text-align: center; display: block;">Cotizar Solución</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO DIRECTO -->
+    <section id="contacto" class="contact-section">
+        <div class="contact-card">
+            <h2 style="text-align: center; margin-bottom: 0.5rem; font-weight: 800;">Hagamos del delivery tu mejor canal</h2>
+            <p style="text-align: center; color: var(--kp-text-muted); margin-bottom: 2rem;">Agendemos una sesión de diagnóstico e iniciemos tu Plan 30 / 60 / 90 Días™.</p>
+
+            <form action="https://formsubmit.co/contacto@kitchenpartner.com.mx" method="POST">
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" name="nombre" class="form-control" required placeholder="Ingresa tu nombre completo">
+                </div>
+                <div class="form-group">
+                    <label>Nombre del Restaurante / Empresa</label>
+                    <input type="text" name="restaurante" class="form-control" required placeholder="Ej. Taquería El Rey / Grupo Gastronómico">
+                </div>
+                <div class="form-group">
+                    <label>Teléfono (WhatsApp)</label>
+                    <input type="tel" name="telefono" class="form-control" required placeholder="Ej. 686 123 4567">
+                </div>
+                <div class="form-group">
+                    <label>Ciudad de Operación</label>
+                    <input type="text" name="ciudad" class="form-control" required placeholder="Ej. Mexicali, Tijuana, Ensenada">
+                </div>
+                <div class="form-group">
+                    <label>Plan de Interés Inicial</label>
+                    <select name="plan" class="form-control">
+                        <option value="KP Growth">KP Growth ⭐ (KP 360™) — $4,900 MXN / mes</option>
+                        <option value="KP Audit">KP Audit — $5,000 MXN (Diagnóstico puntual)</option>
+                        <option value="KP Start">KP Start — $3,500 MXN / mes</option>
+                        <option value="KP Enterprise">KP Enterprise — Cotización multisucursal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mensaje o Comentarios Adicionales</label>
+                    <textarea name="mensaje" class="form-control" rows="3" placeholder="Cuéntanos brevemente sobre tus marcas o sucursales actuales..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-cta" style="width: 100%; padding: 1rem; font-size: 1rem;">Solicitar Diagnóstico Inicial</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Kitchen Partner™</strong> — Consultoría Estratégica en Delivery</p>
+        <p style="margin-top: 0.4rem;">Mexicali, Baja California, México | contacto@kitchenpartner.com.mx</p>
+        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;">&copy; 2026 Kitchen Partner. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
