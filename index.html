@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kitchen Partner | Tu Socio Estratégico en Delivery</title>
+    <title>Kitchen Partner | Tu Socio Estratégico</title>
 
     <!-- Vista previa para WhatsApp y Redes Sociales -->
-    <meta property="og:title" content="Kitchen Partner | Tu Socio Estratégico en Delivery">
+    <meta property="og:title" content="Kitchen Partner | Tu Socio Estratégico">
     <meta property="og:description" content="Gestión, administración y escalamiento de marcas restauranteras en plataformas de delivery (Rappi, DiDi Food, Uber Eats).">
     <meta property="og:image" content="https://kitchenpartner.com.mx/k-color.png">
     <meta property="og:url" content="https://kitchenpartner.com.mx/">
     <meta property="og:type" content="website">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="k-color.png">
     <link rel="apple-touch-icon" href="k-color.png">
@@ -669,16 +669,13 @@
         </div>
     </section>
 
-    <!-- FORMULARIO DE CONTACTO -->
+    <!-- FORMULARIO DE CONTACTO CONECTADO A GOOGLE SHEETS -->
     <section id="contacto">
         <div class="contact-container">
             <h2 style="text-align: center; margin-bottom: 10px;">Comienza a Escalar tu Delivery</h2>
             <p style="text-align: center; color: var(--kp-text-muted); margin-bottom: 30px;">Déjanos tus datos y la cantidad de sucursales para enviarte una propuesta personalizada.</p>
 
-            <form action="https://formsubmit.co/contacto@kitchenpartner.com.mx" method="POST">
-                <input type="hidden" name="_subject" value="Nueva Solicitud de Cotización - Kitchen Partner">
-                <input type="hidden" name="_captcha" value="false">
-
+            <form id="kpForm">
                 <div class="form-group">
                     <label for="nombre">Nombre y Apellido</label>
                     <input type="text" id="nombre" name="Nombre" placeholder="Ej. Juan Pérez" required>
@@ -721,7 +718,8 @@
                     <textarea id="mensaje" name="Mensaje" rows="3" placeholder="Platícanos brevemente sobre tus necesidades operativas..."></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-navy" style="font-size: 1.05rem; padding: 15px; width: 100%;">Enviar Solicitud de Cotización</button>
+                <button type="submit" id="btnSubmit" class="btn btn-navy" style="font-size: 1.05rem; padding: 15px; width: 100%;">Enviar Solicitud de Cotización</button>
+                <p id="formStatus" style="text-align: center; margin-top: 15px; font-weight: bold; display: none;"></p>
             </form>
         </div>
     </section>
@@ -731,6 +729,34 @@
     </footer>
 
     <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzGQ2BcrsOtccFm5Nf9Bn88GhgyUFRstrycJL9dl7ASVHmeoiKKKDNjg6_K4aw3gHg_/exec';
+        const form = document.getElementById('kpForm');
+        const statusText = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('btnSubmit');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Enviando...';
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    statusText.style.display = 'block';
+                    statusText.style.color = '#0D2B45';
+                    statusText.innerText = '¡Solicitud enviada con éxito! Nos pondremos en contacto muy pronto.';
+                    submitBtn.innerText = 'Enviar Solicitud de Cotización';
+                    submitBtn.disabled = false;
+                    form.reset();
+                })
+                .catch(error => {
+                    statusText.style.display = 'block';
+                    statusText.style.color = '#FF6B4A';
+                    statusText.innerText = 'Hubo un problema al enviar. Por favor intenta de nuevo.';
+                    submitBtn.innerText = 'Enviar Solicitud de Cotización';
+                    submitBtn.disabled = false;
+                });
+        });
+
         function selectPlan(planName) {
             const planSelect = document.getElementById('plan');
             if(planSelect) {
